@@ -1,12 +1,11 @@
-import { Router, Request, Response } from 'express'
+import { Router } from "express";
 
-const router = Router()
+import { ControllerUserCreate } from './Controllers/user/create_user_controller'
+import { ControllerUserAuthCreate } from "./Controllers/user/create_auth_user_controller";
 
-router.get('/teste' , (req:Request , res:Response) => {
-    return res.json({
-        nome: 'Adonai',
-        sobrenome:'japa',
-    })
-}) 
+const router = Router();
 
-export {router}
+router.post('/users', new ControllerUserCreate().Play)
+router.post('/session', new ControllerUserAuthCreate().Play)
+
+export { router };
