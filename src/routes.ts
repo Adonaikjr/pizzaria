@@ -10,6 +10,7 @@ import { Controller_SearchCategory } from "./Controllers/category/create_search_
 import { Controller_Product } from "./Controllers/product/create_product_Controller";
 
 import uploadConfig from './configs/multer'
+import { Controller_ListCategory } from "./Controllers/product/create_list_category_Controller";
 
 
 const router = Router();
@@ -27,6 +28,7 @@ router.post('/category', Middle_auth, new Controller_Category().Play)
 router.get('/category', Middle_auth, new Controller_SearchCategory().Play)
 //routes product
 router.post('/product', Middle_auth, upload.single('file') , new Controller_Product().Play)
+router.get('/category/product', Middle_auth, new Controller_ListCategory().Play)
 
 
 

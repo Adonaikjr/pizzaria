@@ -8,8 +8,23 @@ interface types_product_Request {
     category_id: string;
 }
 
-export class CreateNewProductService {
-    async execute({ name, price, description, banner, category_id }: types_product_Request) {
-        return { ok: true }
+class CreateNewProductService {
+    
+    async Play({ name, price, description, banner, category_id }: types_product_Request) {
+
+        const products = await prismaClient.product.create({
+            data: {
+                name: name,
+                price:price,
+                description:description,
+                banner:banner,
+                category_id:category_id,
+            }
+        });
+
+        return products;
+
     }
 }
+export { CreateNewProductService }
+
