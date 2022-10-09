@@ -39,12 +39,12 @@ class CreateAuthUserService {
                 expiresIn: '30d'
             })
 
-        return { 
+        return {
             id: user.id,
             name: user.name,
             email: user.email,
             token: token
-         }
+        }
     }
 }
 
