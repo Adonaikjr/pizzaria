@@ -18,6 +18,7 @@ import { Controller_DeleteItem } from "./Controllers/order/create_delete_item_Co
 import { Controller_SendItem } from "./Controllers/order/create_send_item_Controller";
 import { Controller_ListOrder } from "./Controllers/order/create_list_order_service";
 import { Controller_DetailsOrder } from "./Controllers/order/crete_details_order_Controller";
+import { Controller_FinishOrder } from "./Controllers/order/create_finish_order_Controller";
 
 
 const router = Router();
@@ -45,7 +46,7 @@ router.delete('/order/delete', Middle_auth, new Controller_DeleteItem().Play)
 router.put('/order/send', Middle_auth, new Controller_SendItem().Play)
 router.get('/orders', Middle_auth, new Controller_ListOrder().Play)
 router.get('/order/details', Middle_auth, new Controller_DetailsOrder().Play)
-
+router.put( '/order/finish', Middle_auth, new Controller_FinishOrder().Play )
 export { router };
 
 
